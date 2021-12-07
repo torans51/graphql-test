@@ -1,12 +1,28 @@
 const express = require('express')
-// import express from 'express'
+const { graphqlHTTP } = require('express-graphql')
+const { buildSchema } = require('graphql')
+
+// Define the schema
+const schema = buildSchema(`
+  type Query {
+    message: String!
+  }
+`)
+
+// Define the root resolver
+const root = {
+  message: async () => {
+    return 'Hello world'
+  }
+}
+
 
 const app = express()
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Hello world' })
-})
+app.use('/graphql', graphqlHTTP({
+  schema,
+  rootValue: root,
+  graphiql: true,
+}))
 
-app.listen(8888, () => {
-  console.log("Server app and running ...")
-})
+app.listen(4000)
