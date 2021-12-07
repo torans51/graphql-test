@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:run": "node server.js",
+    "dev:run": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@graphql-tools/schema": "^8.3.1",
     "express": "^4.17.1",
     "express-graphql": "^0.12.0",
     "graphql": "^16.0.1"
