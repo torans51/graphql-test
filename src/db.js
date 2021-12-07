@@ -38,6 +38,39 @@ const authors = [
     }
 ]
 
+const reviews = [
+    {
+        id: "1",
+        body: "This is the first review",
+        from: "Anonymous",
+        bookId: "1"
+    },
+    {
+        id: "2",
+        body: "This is the second review",
+        from: "Antani",
+        bookId: "1"
+    },
+    {
+        id: "3",
+        body: "This is the third review",
+        from: "Joe",
+        bookId: "2"
+    },
+    {
+        id: "4",
+        body: "This is the forth review",
+        from: "CB",
+        bookId: "2"
+    },
+    {
+        id: "5",
+        body: "This is the fifth review",
+        from: "Raffaello",
+        bookId: "2"
+    }
+]
+
 exports.findBooks = async () => {
     console.log("find books")
     return books
@@ -56,4 +89,14 @@ exports.findAuthors = async () => {
 exports.findAuthorById = async (id) => {
     console.log(`find author ${id}`)
     return authors.find(a => a.id === id)
+}
+
+exports.findReviews = async () => {
+    console.log('find reviews')
+    return reviews
+}
+
+exports.findReviewById = async (id) => {
+    console.log(`find review ${id}`)
+    return reviews.find(r => r.id === id)
 }

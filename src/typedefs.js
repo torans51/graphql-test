@@ -16,11 +16,18 @@ exports.typeDefs = `
         description: String
         shortTitle: String!
         author: Author!
+        reviews: [Review!]!
     }
 
     type Author {
         id: Int!
         firstname: String!
         lastname: String!
+    }
+
+    type Review {
+        id: ID!
+        body: String!
+        from: String
     }
 `
