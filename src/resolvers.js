@@ -4,9 +4,9 @@ exports.resolvers = {
     Book: {
         shortTitle: (parent) => `${parent.id}-${parent.title}`,
         author: async (book, _, { authorLoader }) => authorLoader.load(book.authorId),
-        reviews: async (book) => {
-            const reviews = await db.findReviews()
-            return reviews.filter(r => r.bookId === book.id)
+        reviews: async (book, _, { reviewsLoader }) => {
+            // return db.findReviews({ bookId: book.id })
+            return reviewsLoader.load(book.id)
         }
     },
     Query: {

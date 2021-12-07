@@ -49,7 +49,7 @@ const reviews = [
         id: "2",
         body: "This is the second review",
         from: "Antani",
-        bookId: "1"
+        bookId: "2"
     },
     {
         id: "3",
@@ -61,7 +61,7 @@ const reviews = [
         id: "4",
         body: "This is the forth review",
         from: "CB",
-        bookId: "2"
+        bookId: "1"
     },
     {
         id: "5",
@@ -91,7 +91,12 @@ exports.findAuthorById = async (id) => {
     return authors.find(a => a.id === id)
 }
 
-exports.findReviews = async () => {
+exports.findReviews = async (filter) => {
+    if (filter && filter.bookId) {
+        console.log(`find reviews by book ${filter.bookId}`)
+        return reviews.filter(r => r.bookId === filter.bookId)
+    }
+
     console.log('find reviews')
     return reviews
 }
