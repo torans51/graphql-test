@@ -16,6 +16,12 @@ const books = [
         title: 'Il cinque maggio',
         description: 'Descrizione de il cinque maggio',
         authorId: 1,
+    },
+    {
+        id: '4',
+        title: 'Adelchi',
+        description: 'Descrizione di Adelchi',
+        authorId: 1,
     }
 ]
 
