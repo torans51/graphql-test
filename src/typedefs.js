@@ -2,6 +2,7 @@ exports.typeDefs = `
     type Query
 
     extend type Query {
+        book(id: ID!): Book
         books: [Book!]!
     }
 

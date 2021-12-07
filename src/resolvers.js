@@ -6,6 +6,7 @@ exports.resolvers = {
         author: async (book, _, { authorLoader }) => authorLoader.load(book.authorId)
     },
     Query: {
+        book: async (_, { id }) => db.findBookById(id),
         books: async () => db.findBooks(),
         authors: async () => db.findAuthors(),
     }
