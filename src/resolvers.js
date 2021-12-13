@@ -13,5 +13,11 @@ exports.resolvers = {
         book: async (_, { id }) => db.findBookById(id),
         books: async () => db.findBooks(),
         authors: async () => db.findAuthors(),
+    },
+    Mutation: {
+        createAuthor: async (_, input) => {
+            console.log(input)
+            return { ...input.author, id: 12345 }
+        }
     }
 }

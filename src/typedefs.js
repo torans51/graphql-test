@@ -1,5 +1,6 @@
 exports.typeDefs = `
     type Query
+    type Mutation
 
     extend type Query {
         book(id: ID!): Book
@@ -8,6 +9,15 @@ exports.typeDefs = `
 
     extend type Query {
         authors: [Author!]!
+    }
+    
+    extend type Mutation {
+        createAuthor(author: AuthorInput): Author!
+    }
+    
+    input AuthorInput {
+        firstname: String!
+        lastname: String!
     }
 
     type Book {
