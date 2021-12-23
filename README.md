@@ -14,3 +14,5 @@ Run the server
 ```bash
 $ npm run dev:run
 ```
+
+Then navigate to the following url `localhost:4000/graphql/graphiql` to access graphiql interface.
